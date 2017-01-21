@@ -15,7 +15,7 @@ module.exports = {
   },
   module: {
     loaders: [
-      {test: /\.js$/, include: __dirname + '/app', loader: 'babel-loader'},
+      {test: /\.js$/, include: __dirname + '/app', loader: 'babel-loader?presets[]=es2015&presets[]=react'},
       {test: /\.css$/, loader: 'style=loader!css-loader'}
     ]
   },
