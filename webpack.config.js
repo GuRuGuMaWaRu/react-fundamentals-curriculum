@@ -17,7 +17,8 @@ module.exports = {
   module: {
     loaders: [
       {test: /\.js$/, include: path.join(__dirname, 'app'), loader: 'babel-loader'},
-      {test: /\.css$/, loader: 'style-loader!css-loader'}
+      {test: /\.css$/, loader: 'style-loader!css-loader'},
+      {test: /\.svg$/, loader: 'file-loader'}
     ]
   },
   plugins: [HtmlWebpackPluginConfig]

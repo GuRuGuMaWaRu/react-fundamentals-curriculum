@@ -1,9 +1,13 @@
 import React from 'react';
+import '../styles/Main.css';
 
-function HelloWorld(props) {
-  return (
-    <div>Hello World!!!</div>
-  );
+export default class Main extends React.Component{
+  render() {
+    return (
+      <div  className="background">
+        <h1>React Router Tutorial</h1>
+        {this.props.children}
+      </div>
+    );
+  };
 };
-
-module.exports = HelloWorld;
