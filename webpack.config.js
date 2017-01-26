@@ -1,3 +1,4 @@
+var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: __dirname + '/app/index.html',
@@ -7,16 +8,16 @@ var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 
 module.exports = {
   entry: [
-    './app/HelloWorld.js'
+    './app/index.js'
   ],
   output: {
-    path: __dirname + '/dist',
+    path: path.join(__dirname, 'dist'),
     filename: 'index_bundle.js'
   },
   module: {
     loaders: [
-      {test: /\.js$/, include: __dirname + '/app', loader: 'babel-loader?presets[]=es2015&presets[]=react'},
-      {test: /\.css$/, loader: 'style=loader!css-loader'}
+      {test: /\.js$/, include: path.join(__dirname, 'app'), loader: 'babel-loader'},
+      {test: /\.css$/, loader: 'style-loader!css-loader'}
     ]
   },
   plugins: [HtmlWebpackPluginConfig]
