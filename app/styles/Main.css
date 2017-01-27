@@ -1,4 +1,5 @@
-body {
-  background-image: url('../images/pattern.svg');
-  background-size: cover;
-}
+/*.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}*/
