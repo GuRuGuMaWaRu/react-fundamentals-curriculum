@@ -4,7 +4,7 @@ export default class InputForm extends Component{
   render() {
     return (
       <div className={this.props.css.main}>
-        <form onSubmit={null} className="form-inline">
+        <form onSubmit={null} className={this.props.css.form}>
           <div className="form-group">
             <input
               className="form-control"
@@ -30,6 +30,7 @@ InputForm.PropTypes = {
 InputForm.defaultProps = {
   css: {
     main: "",
+    form: "",
     button: ""
   }
 }

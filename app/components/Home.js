@@ -1,12 +1,19 @@
 import React from 'react';
+import InputForm from './InputForm';
 import '../styles/Home.css';
 
 class Home extends React.Component{
   render() {
+    const css = {
+      main: 'col-sm-2 col-sm-offset-5',
+      button: 'col-sm-6 col-sm-offset-3'
+    };
+
     return (
       <div className="background flex">
         <h1 className="home-title">Enter a City and State</h1>
-        <div className="col-sm-2 col-sm-offset-5">
+        {/* <InputForm css={css} /> */}
+        <div className={css.main}>
           <form onSubmit={null}>
             <div className="form-group">
               <input
@@ -14,7 +21,7 @@ class Home extends React.Component{
                 type="text"
                 placeholder="California, Los Angeles"/>
             </div>
-            <div className="form-group col-sm-6 col-sm-offset-3">
+            <div className={"form-group " + css.button}>
               <button
                 className="btn btn-block btn-success">
                 Get Weather

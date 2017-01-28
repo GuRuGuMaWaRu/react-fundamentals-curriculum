@@ -6,6 +6,7 @@ export default class Header extends React.Component{
   render() {
     const css = {
       main: "",
+      form: "form-inline",
       button: "header-menu-button"
     };
 
