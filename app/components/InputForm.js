@@ -4,14 +4,14 @@ export default class InputForm extends Component{
   render() {
     return (
       <div className={this.props.css.main}>
-        <form onSubmit={null}>
+        <form onSubmit={null} className="form-inline">
           <div className="form-group">
             <input
               className="form-control"
               type="text"
               placeholder="California, Los Angeles"/>
           </div>
-          <div className="form-group" className={this.props.css.input}>
+          <div className={"form-group" + this.props.css.button}>
             <button
               className="btn btn-block btn-success">
               Get Weather
@@ -22,3 +22,14 @@ export default class InputForm extends Component{
     );
   }
 };
+
+InputForm.PropTypes = {
+  css: React.PropTypes.object
+};
+
+InputForm.defaultProps = {
+  css: {
+    main: "",
+    button: ""
+  }
+}
