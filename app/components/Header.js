@@ -6,13 +6,13 @@ export default class Header extends React.Component{
   render() {
     const css = {
       main: "",
-      input: ""
+      button: "header-menu-button"
     };
 
     return (
       <div className="header-wrapper">
         <h2>Get your weather</h2>
-        <InputForm />
+        <InputForm css={css}/>
       </div>
     );
   }

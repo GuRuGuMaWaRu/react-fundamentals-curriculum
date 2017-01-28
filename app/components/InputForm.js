@@ -11,7 +11,7 @@ export default class InputForm extends Component{
               type="text"
               placeholder="California, Los Angeles"/>
           </div>
-          <div className={"form-group" + this.props.css.button}>
+          <div className={"form-group " + this.props.css.button}>
             <button
               className="btn btn-block btn-success">
               Get Weather
