@@ -12,23 +12,7 @@ class Home extends React.Component{
     return (
       <div className="background flex">
         <h1 className="home-title">Enter a City and State</h1>
-        {/* <InputForm css={css} /> */}
-        <div className={css.main}>
-          <form onSubmit={null}>
-            <div className="form-group">
-              <input
-                className="form-control"
-                type="text"
-                placeholder="California, Los Angeles"/>
-            </div>
-            <div className={"form-group " + css.button}>
-              <button
-                className="btn btn-block btn-success">
-                Get Weather
-              </button>
-            </div>
-          </form>
-        </div>
+        <InputForm css={css} />
       </div>
     );
   }
