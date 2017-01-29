@@ -13,8 +13,23 @@ export default class Header extends React.Component{
     return (
       <div className="header-wrapper">
         <h2>Get your weather</h2>
-        <InputForm css={css}/>
+        <InputForm
+          css={css}
+          location={this.props.location}
+          onSubmit={this.props.onSubmit}
+          onChange={this.props.onChange}/>
       </div>
     );
   }
 };
+
+Header.PropTypes = {
+  location: React.PropTypes.string,
+  onSubmit: React.PropTypes.func,
+  onChange: React.PropTypes.fun
+}
+Header.defaultProps = {
+  location: '',
+  onSubmit: null,
+  onChange: null
+}

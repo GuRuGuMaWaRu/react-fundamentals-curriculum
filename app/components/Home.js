@@ -2,7 +2,11 @@ import React from 'react';
 import InputForm from './InputForm';
 import '../styles/Home.css';
 
-class Home extends React.Component{
+export default class Home extends React.Component{
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const css = {
       main: 'col-sm-2 col-sm-offset-5',
@@ -18,4 +22,9 @@ class Home extends React.Component{
   }
 };
 
-export default Home;
+Home.PropTypes = {
+  onSubmit: React.PropTypes.func
+}
+Home.defaultProps = {
+  onSubmit: null
+}
