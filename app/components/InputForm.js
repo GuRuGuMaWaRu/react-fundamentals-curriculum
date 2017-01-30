@@ -8,10 +8,10 @@ export default class InputForm extends Component{
           <div className="form-group">
             <input
               onChange={this.props.onChange}
+              value={this.props.location}
               className="form-control"
               type="text"
-              placeholder="California, Los Angeles"
-              value={this.props.location}/>
+              placeholder="California, Los Angeles" />
           </div>
           <div className={"form-group " + this.props.css.button}>
             <button

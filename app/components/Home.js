@@ -16,7 +16,11 @@ export default class Home extends React.Component{
     return (
       <div className="background flex">
         <h1 className="home-title">Enter a City and State</h1>
-        <InputForm css={css} />
+        <InputForm
+          css={css}
+          location={this.props.location}
+          onSubmit={this.props.onSubmit}
+          onChange={this.props.onChange}/>
       </div>
     );
   }

@@ -27,7 +27,11 @@ export default class Main extends React.Component{
           location={this.state.location}
           onSubmit={this.handleSubmitLocation}
           onChange={this.handleChangeLocation} />
-        {this.props.children}
+        {React.cloneElement(this.props.children, {
+          location: this.state.location,
+          onSubmit: this.handleSubmitLocation,
+          onChange: this.handleChangeLocation
+        })}
       </div>
     );
   }
