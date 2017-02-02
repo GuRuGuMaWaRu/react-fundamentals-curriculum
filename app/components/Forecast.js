@@ -1,13 +1,9 @@
-import React from 'react';
+var React = require('react');
 
-export default class Forecast extends React.Component{
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div>Forecast Component</div>
-    )
-  }
+function Forecast (props) {
+  return (
+    <div>Forecase Component</div>
+  )
 }
+
+module.exports = Forecast;

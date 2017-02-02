@@ -1,48 +1,32 @@
-import React from 'react';
+var React = require('react');
+var PropTypes = React.PropTypes;
+var GetCityContainer = require('../containers/GetCityContainer');
 
-import InputForm from './InputForm';
-import '../styles/Home.css';
-
-export default class Home extends React.Component{
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    const css = {
-      main: 'col-sm-2 col-sm-offset-5',
-      button: 'col-sm-6 col-sm-offset-3'
-    };
-
-    return (
-      <div className="background flex">
-        <h1 className="home-title">Enter a City and State</h1>
-        <InputForm
-          css={css}
-          location={this.props.location}
-          onSubmit={this.props.onSubmit}
-          onChange={this.props.onChange}/>
-        <div id="temperature">{this.props.temperature}</div>
-      </div>
-    );
-  }
-};
-
-Home.PropTypes = {
-  css: React.PropTypes.object,
-  location: React.PropTypes.string,
-  temperature: React.PropTypes.number,
-  onSubmit: React.PropTypes.func,
-  onChange: React.PropTypes.func
-}
-Home.defaultProps = {
-  css: {
-    main: "",
-    form: "",
-    button: ""
+var styles = {
+  container: {
+    backgroundSize: 'cover',
+    backgroundImage: "url('app/images/pattern.svg')",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
+    width: '100%'
   },
-  location: '',
-  temperature: 0,
-  onSubmit: null,
-  onChange: null
+  header: {
+    fontSize: 45,
+    color: '#fff',
+    fontWeight: 100,
+  },
 }
+
+function Home (props) {
+  return (
+    <div style={styles.container}>
+      <h1 style={styles.header}>Enter a City and State</h1>
+      <GetCityContainer />
+    </div>
+  )
+}
+
+module.exports = Home;
