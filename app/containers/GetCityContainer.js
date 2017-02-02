@@ -1,5 +1,6 @@
 var React = require('react');
 var PropTypes = React.PropTypes;
+
 var GetCity = require('../components/GetCity');
 
 var GetCityContainer = React.createClass({

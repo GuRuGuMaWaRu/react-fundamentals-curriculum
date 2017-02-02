@@ -1,4 +1,5 @@
 var React = require('react');
+
 var Forecast = require('../components/Forecast');
 var getForcast = require('../helpers/api').getForcast;
 
@@ -10,7 +11,10 @@ var ForecastContainer = React.createClass({
     }
   },
   componentDidMount: function() {
-    console.log(this.props.location.query.city);
+    getForcast(this.props.location.query.city)
+      .then(data => {
+        console.log(data.list);
+      });
   },
   render: function () {
     return (
