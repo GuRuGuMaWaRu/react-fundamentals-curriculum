@@ -1,19 +1,28 @@
 import React from 'react';
+
 import Header from './Header';
+import helpers from '../utils/weatherHelpers'
 import '../styles/Main.css';
 
 export default class Main extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      location: ''
+      location: '',
+      temperature: 0
     };
     this.handleSubmitLocation = this.handleSubmitLocation.bind(this);
     this.handleChangeLocation = this.handleChangeLocation.bind(this);
   }
   handleSubmitLocation(event) {
     event.preventDefault();
-    console.log(this.state.location);
+
+    const weather = helpers.getWeather(this.state.location)
+      .then(data => {
+        this.setState({
+          temperature: data.main.temp
+        });
+      });
   }
   handleChangeLocation(event) {
     this.setState({
@@ -29,6 +38,7 @@ export default class Main extends React.Component{
           onChange={this.handleChangeLocation} />
         {React.cloneElement(this.props.children, {
           location: this.state.location,
+          temperature: this.state.temperature,
           onSubmit: this.handleSubmitLocation,
           onChange: this.handleChangeLocation
         })}

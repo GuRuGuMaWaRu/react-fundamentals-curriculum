@@ -1,4 +1,5 @@
 import React from 'react';
+
 import InputForm from './InputForm';
 import '../styles/Header.css';
 
@@ -24,11 +25,17 @@ export default class Header extends React.Component{
 };
 
 Header.PropTypes = {
+  css: React.PropTypes.object,
   location: React.PropTypes.string,
   onSubmit: React.PropTypes.func,
   onChange: React.PropTypes.fun
 }
 Header.defaultProps = {
+  css: {
+    main: "",
+    form: "",
+    button: ""
+  },
   location: '',
   onSubmit: null,
   onChange: null

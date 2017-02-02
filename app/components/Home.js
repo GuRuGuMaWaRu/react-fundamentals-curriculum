@@ -1,4 +1,5 @@
 import React from 'react';
+
 import InputForm from './InputForm';
 import '../styles/Home.css';
 
@@ -21,14 +22,27 @@ export default class Home extends React.Component{
           location={this.props.location}
           onSubmit={this.props.onSubmit}
           onChange={this.props.onChange}/>
+        <div id="temperature">{this.props.temperature}</div>
       </div>
     );
   }
 };
 
 Home.PropTypes = {
-  onSubmit: React.PropTypes.func
+  css: React.PropTypes.object,
+  location: React.PropTypes.string,
+  temperature: React.PropTypes.number,
+  onSubmit: React.PropTypes.func,
+  onChange: React.PropTypes.func
 }
 Home.defaultProps = {
-  onSubmit: null
+  css: {
+    main: "",
+    form: "",
+    button: ""
+  },
+  location: '',
+  temperature: 0,
+  onSubmit: null,
+  onChange: null
 }
