@@ -12,10 +12,15 @@ function getFiveDaysWeather(cityName) {
 }
 
 const helpers = {
-  getWeather: function(cityName) {
+  getCurrentWeather: function(cityName) {
     return getCurrentWeather(cityName)
       .then(response => response.data)
       .catch(error => console.warn('Error in getWeather function:', error));
+  },
+  getFiveDaysWeather: function(cityName) {
+    return getFiveDaysWeather(cityName)
+      .then(response => response.data)
+      .catch(error => console.warn('Error in getFiveDaysWeather function:', error));
   }
 };
 

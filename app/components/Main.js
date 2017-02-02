@@ -17,11 +17,16 @@ export default class Main extends React.Component{
   handleSubmitLocation(event) {
     event.preventDefault();
 
-    const weather = helpers.getWeather(this.state.location)
+    helpers.getCurrentWeather(this.state.location)
       .then(data => {
         this.setState({
           temperature: data.main.temp
         });
+      });
+
+    helpers.getFiveDaysWeather(this.state.location)
+      .then(data => {
+        console.log(data);
       });
   }
   handleChangeLocation(event) {
