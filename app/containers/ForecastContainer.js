@@ -7,18 +7,24 @@ var ForecastContainer = React.createClass({
 
   getInitialState: function() {
     return {
-      isLoading: true
+      isLoading: true,
+      forecastData: []
     }
   },
   componentDidMount: function() {
     getForcast(this.props.location.query.city)
       .then(data => {
-        console.log(data.list);
+        this.setState({
+          isLoading: false,
+          forecastData: data.list
+        });
       });
   },
   render: function () {
     return (
-      <Forecast />
+      <Forecast
+        isLoading={this.state.isLoading}
+        forecastData={this.state.forecastData} />
     )
   }
 });
