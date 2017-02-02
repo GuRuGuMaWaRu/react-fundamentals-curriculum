@@ -8,7 +8,7 @@ var ForecastContainer = React.createClass({
   getInitialState: function() {
     return {
       isLoading: true,
-      forecastData: []
+      forecastData: {}
     }
   },
   componentDidMount: function() {
@@ -16,8 +16,9 @@ var ForecastContainer = React.createClass({
       .then(data => {
         this.setState({
           isLoading: false,
-          forecastData: data.list
+          forecastData: data
         });
+        console.log(data);
       });
   },
   render: function () {

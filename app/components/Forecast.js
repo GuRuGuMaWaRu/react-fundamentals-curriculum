@@ -6,12 +6,14 @@ var Loading = require('./Loading');
 function Forecast (props) {
   return props.isLoading === true
     ? <Loading />
-    : <div>Forecase Component</div>
+    : <div>
+      <h1>{props.forecastData.city.name}</h1>
+    </div>
 }
 
 Forecast.propTypes = {
   isLoading: PropTypes.bool.isRequired,
-  forecastData: PropTypes.array.isRequired
+  forecastData: PropTypes.object.isRequired
 }
 
 module.exports = Forecast;
