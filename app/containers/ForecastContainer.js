@@ -18,7 +18,7 @@ var ForecastContainer = React.createClass({
           isLoading: false,
           forecastData: data
         });
-        console.log(data);
+        // console.log(data.list);f
       });
   },
   render: function () {
