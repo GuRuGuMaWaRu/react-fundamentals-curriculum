@@ -4,7 +4,9 @@ var Forecast = require('../components/Forecast');
 var getForcast = require('../helpers/api').getForcast;
 
 var ForecastContainer = React.createClass({
-
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   getInitialState: function() {
     return {
       isLoading: true,
@@ -18,14 +20,22 @@ var ForecastContainer = React.createClass({
           isLoading: false,
           forecastData: data
         });
-        // console.log(data.list);f
       });
+  },
+  handleSelectDay: function(day) {
+    this.context.router.push({
+      pathname: '/detail/' + this.state.forecastData.city.name,
+      state: {
+        day: day
+      }
+    });
   },
   render: function () {
     return (
       <Forecast
         isLoading={this.state.isLoading}
-        forecastData={this.state.forecastData} />
+        forecastData={this.state.forecastData}
+        onSelectDay={this.handleSelectDay}/>
     )
   }
 });
