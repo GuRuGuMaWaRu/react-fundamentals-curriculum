@@ -14,7 +14,13 @@ var ForecastContainer = React.createClass({
     }
   },
   componentDidMount: function() {
-    getForcast(this.props.location.query.city)
+    this.makeRequest(this.props.location.query.city);
+  },
+  componentWillReceiveProps: function(nextProps) {
+    this.makeRequest(nextProps.location.query.city);
+  },
+  makeRequest: function(city) {
+    getForcast(city)
       .then(data => {
         this.setState({
           isLoading: false,
@@ -24,7 +30,7 @@ var ForecastContainer = React.createClass({
   },
   handleSelectDay: function(day) {
     this.context.router.push({
-      pathname: '/detail/' + this.state.forecastData.city.name,
+      pathname: '/detail/' + this.props.location.query.city,
       state: {
         day: day
       }
