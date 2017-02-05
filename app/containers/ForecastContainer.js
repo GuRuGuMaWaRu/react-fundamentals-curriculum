@@ -30,9 +30,12 @@ var ForecastContainer = React.createClass({
   },
   handleSelectDay: function(day) {
     this.context.router.push({
-      pathname: '/detail/' + this.props.location.query.city,
+      pathname: '/detail/' + this.state.forecastData.city.name,
       state: {
-        day: day
+        day: day,
+        city: this.state.forecastData.city.name
+      },
+      query: {
       }
     });
   },

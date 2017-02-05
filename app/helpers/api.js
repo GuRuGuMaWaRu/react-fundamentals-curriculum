@@ -17,6 +17,7 @@ function prepUrl (type, queryStringData) {
 function getQueryStringData (city) {
   return {
     q: city,
+    units: 'metric',
     type: 'accurate',
     APPID: _APIKEY,
     cnt: 5

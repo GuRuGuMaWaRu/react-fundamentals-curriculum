@@ -5,9 +5,12 @@ var Detail = require('../components/Detail');
 
 var DetailContainer = React.createClass({
   render: function() {
-    console.log(this.props.location.state.day);
+    console.log(this.props.location.state);
+
     return (
-      <Detail />
+      <Detail
+        forecastData={this.props.location.state.day}
+        city={this.props.location.state.city}/>
     );
   }
 });
